@@ -1,0 +1,50 @@
+{
+  "name": "workout",
+  "version": "0.0.0",
+  "description": "My workout docs",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "npm run build",
+    "format": "prettier --prose-wrap always --write docs/*.md docs/**/*.md",
+    "release": "standard-version",
+    "prestart": "react-env",
+    "start": "node server.js",
+    "start:dev": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids"
+  },
+  "author": "Johan Book",
+  "license": "MIT",
+  "homepage": "https://johanbook.com/workout",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "docs/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --prose-wrap always --write"
+    ]
+  },
+  "devDependencies": {
+    "@docusaurus/core": "^2.2.0",
+    "@docusaurus/preset-classic": "^2.2.0",
+    "@mdx-js/react": "^1.6.21",
+    "@svgr/webpack": "^5.5.0",
+    "clsx": "^1.1.1",
+    "file-loader": "^6.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.0.5",
+    "prism-react-renderer": "^1.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.3",
+    "standard-version": "^9.3.1",
+    "url-loader": "^4.1.1"
+  }
+}
